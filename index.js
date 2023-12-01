@@ -20,21 +20,28 @@ require("./startup/session")(app); // Initialized session for authentication
 require("./startup/securityHeaders")(app); // Setting security headers with helmet module
 require("./startup/routes")(app); // Initializing all api routes
 
-if (isProduction) {
-  app.use(express.static("client/build"));
+// if (isProduction) {
+//   app.use(express.static("client/build"));
 
-  app.get("*", (_, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-  });
-} else {
-  app.use(express.static("../public"));
-  app.get("/", (req, res) => {
-    res.send("hello");
-  });
-  app.use("/api/gig", gigRoutes);
-  app.use("/api/orders", orderRoutes);
-  app.use("/api/payments", paymentRoutes);
-}
+//   app.get("*", (_, res) => {
+//     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+//   });
+// } else {
+app.use(cors(
+  {
+    origin: ["https://jambu-space-frontend.vercel.app/"],
+    methods: ["POST", "GET"],
+    credentials: true
+  }
+));
+app.use(express.static("../public"));
+app.get("/", (req, res) => {
+  res.send("hello");
+});
+app.use("/api/gig", gigRoutes);
+app.use("/api/orders", orderRoutes);
+app.use("/api/payments", paymentRoutes);
+// }
 
 app.listen(PORT, () => {
   console.log(`> 🚀 Server is running on port ${PORT}...`);
