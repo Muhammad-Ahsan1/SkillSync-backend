@@ -7,11 +7,11 @@ const gigRoutes = require("./routes/api/gigRoutes");
 const paymentRoutes = require("./routes/api/paymentRoutes");
 const orderRoutes = require("./routes/api/orderRoutes");
 
-const isProduction = NODE_ENV === "production";
+// const isProduction = NODE_ENV === "production";
 
-if (!isProduction) {
+// if (!isProduction) {
   require("dotenv").config();
-}
+// }
 
 app.use(compression()); // gzip compress responses
 require("./startup/logging")(); // logging to files
@@ -30,11 +30,11 @@ require("./startup/routes")(app); // Initializing all api routes
 app.use(cors(
   {
     origin: ["https://jambu-space-frontend.vercel.app/"],
-    methods: ["POST", "GET"],
+    methods: ["POST", "GET","PUT","DELETE"],
     credentials: true
   }
 ));
-app.use(express.static("../public"));
+// app.use(express.static("../public"));
 app.get("/", (req, res) => {
   res.send("hello");
 });
