@@ -30,8 +30,9 @@ require("./startup/routes")(app); // Initializing all api routes
 app.use(cors(
   {
     origin: "*",
-    methods: ["POST", "GET","PUT","DELETE"],
-    credentials: true
+    methods: ["POST", "GET","PUT","DELETE","OPTIONS"],
+    credentials: true,
+
   }
 ));
 // app.use(express.static("../public"));
