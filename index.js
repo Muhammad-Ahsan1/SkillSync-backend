@@ -29,7 +29,7 @@ require("./startup/routes")(app); // Initializing all api routes
 // } else {
 app.use(cors(
   {
-    origin: ["https://jambu-space-frontend.vercel.app"],
+    origin: "*",
     methods: ["POST", "GET","PUT","DELETE"],
     credentials: true
   }
