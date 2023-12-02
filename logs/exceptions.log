@@ -12458,3 +12458,111 @@
     }
   ]
 }
+{
+  error: ReferenceError: isProduction is not defined
+      at Object.<anonymous> (C:\Users\HP\Desktop\Usman Project\jambu - Copy\backend\index.js:30:1)
+      at Module._compile (node:internal/modules/cjs/loader:1105:14)
+      at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+      at Module.load (node:internal/modules/cjs/loader:981:32)
+      at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+      at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
+      at node:internal/main/run_main_module:17:47,
+  level: 'error',
+  message: 'uncaughtException: isProduction is not defined\n' +
+    'ReferenceError: isProduction is not defined\n' +
+    '    at Object.<anonymous> (C:\\Users\\HP\\Desktop\\Usman Project\\jambu - Copy\\backend\\index.js:30:1)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1105:14)\n' +
+    '    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:981:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)\n' +
+    '    at node:internal/main/run_main_module:17:47',
+  stack: 'ReferenceError: isProduction is not defined\n' +
+    '    at Object.<anonymous> (C:\\Users\\HP\\Desktop\\Usman Project\\jambu - Copy\\backend\\index.js:30:1)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1105:14)\n' +
+    '    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:981:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)\n' +
+    '    at node:internal/main/run_main_module:17:47',
+  exception: true,
+  date: 'Sun Dec 03 2023 01:57:34 GMT+0500 (Pakistan Standard Time)',
+  process: {
+    pid: 19808,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\HP\\Desktop\\Usman Project\\jambu - Copy\\backend',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v16.16.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'C:\\Users\\HP\\Desktop\\Usman Project\\jambu - Copy\\backend\\index.js'
+    ],
+    memoryUsage: {
+      rss: 74977280,
+      heapTotal: 57430016,
+      heapUsed: 35815224,
+      external: 25321041,
+      arrayBuffers: 18917873
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 481931 },
+  trace: [
+    {
+      column: 1,
+      file: 'C:\\Users\\HP\\Desktop\\Usman Project\\jambu - Copy\\backend\\index.js',
+      function: null,
+      line: 30,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1105,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1159,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 981,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 822,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/run_main',
+      function: 'Function.executeUserEntryPoint [as runMain]',
+      line: 77,
+      method: 'executeUserEntryPoint [as runMain]',
+      native: false
+    },
+    {
+      column: 47,
+      file: 'node:internal/main/run_main_module',
+      function: null,
+      line: 17,
+      method: null,
+      native: false
+    }
+  ]
+}
