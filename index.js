@@ -10,9 +10,16 @@ const orderRoutes = require("./routes/api/orderRoutes");
 // const isProduction = NODE_ENV === "production";
 
 // if (!isProduction) {
-  require("dotenv").config();
+require("dotenv").config();
 // }
+app.use(cors(
+  {
+    origin: "*",
+    methods: ["POST", "GET", "PUT", "DELETE", "OPTIONS"],
+    credentials: true,
 
+  }
+));
 app.use(compression()); // gzip compress responses
 require("./startup/logging")(); // logging to files
 require("./startup/db")(); // database connection
@@ -27,14 +34,7 @@ require("./startup/routes")(app); // Initializing all api routes
 //     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
 //   });
 // } else {
-app.use(cors(
-  {
-    origin: "*",
-    methods: ["POST", "GET","PUT","DELETE","OPTIONS"],
-    credentials: true,
 
-  }
-));
 // app.use(express.static("../public"));
 app.get("/hello", (req, res) => {
   res.send("hello");
