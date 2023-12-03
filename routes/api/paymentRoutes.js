@@ -9,7 +9,7 @@ const stripe = require("stripe")(
 );
 
 const buyGig = asyncMiddleware(async (req, res) => {
-  console.log("I am runnig🤣🤣");
+  const origin = req.get('origin');
   try {
     const { seller, buyer, gig, orderId } = req.body;
     const orderExist = await Order.findById(orderId);
@@ -30,8 +30,8 @@ const buyGig = asyncMiddleware(async (req, res) => {
             quantity: 1,
           },
         ],
-        success_url: "http://localhost:3000/pages/orders",
-        cancel_url: "http://localhost:3000/payment/cancel",
+        success_url: `${origin}/pages/orders`,
+        cancel_url: `${origin}/payment/cancel`,
       });
 
       const payment = await Payment.create({

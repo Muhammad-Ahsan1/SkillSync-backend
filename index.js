@@ -28,10 +28,10 @@ require("./startup/securityHeaders")(app); // Setting security headers with helm
 require("./startup/routes")(app); // Initializing all api routes
 
 if (isProduction) {
-  app.use(express.static("client/build"));
+  app.use(express.static("../client/build"));
 
   app.get("*", (_, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+    res.sendFile(path.resolve(__dirname, "../client", "build", "index.html"));
   });
 } else {
 
