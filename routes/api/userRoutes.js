@@ -8,6 +8,7 @@ const authMiddleware = require("../../middlewares/auth");
 const asyncMiddleware = require("../../middlewares/async");
 const User = require("../../models/User");
 const { validateUser } = require("../../models/User");
+const { registrationTemplate } = require("../../service/templates/nodeMailerTransporter");
 
 router.get(
   "/me",
@@ -21,6 +22,8 @@ router.get(
 router.post(
   "/",
   asyncMiddleware(async (req, res) => {
+    console.log('🔥🍊🍉 REGISTER',);
+    registrationTemplate({})
     const { error } = validateUser(req.body);
     if (error)
       return res.status(400).json({ message: error.details[0].message });

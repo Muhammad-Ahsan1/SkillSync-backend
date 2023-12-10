@@ -58,7 +58,7 @@ router.put(
   validateId,
   asyncMiddleware(async (req, res) => {
     const customerID = req.params.id;
-
+    console.log('🔥🍊🍉 ',1111111);
     uploadSellerImageMiddleware(req, res, async (err) => {
       if (err)
         return err.code === "LIMIT_FILE_SIZE"
@@ -111,6 +111,7 @@ router.put(
 router.post(
   "/",
   asyncMiddleware(async (req, res) => {
+    console.log('🔥🍊🍉 ',22222222);
     uploadSellerImageMiddleware(req, res, async (err) => {
       if (err)
         return err.code === "LIMIT_FILE_SIZE"

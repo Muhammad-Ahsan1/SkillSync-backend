@@ -6,6 +6,7 @@ const { PORT, NODE_ENV } = require("./config");
 const gigRoutes = require("./routes/api/gigRoutes");
 const paymentRoutes = require("./routes/api/paymentRoutes");
 const orderRoutes = require("./routes/api/orderRoutes");
+const adminRoutes = require("./routes/api/adminRoutes");
 const cors =require('cors')
 const isProduction = NODE_ENV === "production";
 
@@ -40,6 +41,7 @@ app.get("/hello", (req, res) => {
   res.send("hello");
 });
 app.use("/api/gig", gigRoutes);
+app.use("/api/admin", adminRoutes);
 app.use("/api/orders", orderRoutes);
 app.use("/api/payments", paymentRoutes);
 }
