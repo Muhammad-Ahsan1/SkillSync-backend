@@ -1,7 +1,7 @@
 {
-  "name": "jambu-server",
+  "name": "skill-server",
   "version": "1.0.0",
-  "description": "Jambu Space Server",
+  "description": "Skill Sync Server",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -10,7 +10,7 @@
     "dev": "concurrently \"npm run server \" \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=fasle npm install --prefix client && npm run build --prefix client"
   },
-  "author": "Muhammad Ibtesam Arshad",
+  "author": "Muhammad Ahsan",
   "license": "ISC",
   "dependencies": {
     "@mui/material": "^5.6.2",

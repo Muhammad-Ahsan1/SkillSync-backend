@@ -1,8 +1,8 @@
 const {
   PORT = process.env.PORT || 5500,
   NODE_ENV = "development",
-  // MONGO_URI = "mongodb://localhost/jambu-space",
-  MONGO_URI = "mongodb+srv://usman:usman@cluster0.b2y9ffy.mongodb.net/?retryWrites=true&w=majority",
+  MONGO_URI= 'mongodb+srv://ahsanawais786b:LbsVNM5Dm2veIBZP@fyp-cluster.r4ogjow.mongodb.net/skillsync?retryWrites=true&w=majority',
+  // MONGO_URI = "mongodb+srv://usman:usman@cluster0.b2y9ffy.mongodb.net/?retryWrites=true&w=majority",
   SESS_NAME = "sid",
   SESS_SECRET = "secret!session",
   SESS_LIFETIME = 1000 * 60 * 60 * 24 * 7,

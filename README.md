@@ -1,1 +1,1 @@
-# Jambu Space Web Application
+# Skill Sync Web Application
