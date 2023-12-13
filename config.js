@@ -8,6 +8,8 @@ const {
   SESS_LIFETIME = 1000 * 60 * 60 * 24 * 7,
   SENDGRID_API_KEY = "SG.",
   CREATE_USER_SECRET = "abcd",
+  nodeMailerEmail = "ahsanawais786b@gmail.com",
+  nodeMailerPassword = "jbibybyawwgjctbp",
 } = process.env;
 
 module.exports = {
@@ -19,4 +21,6 @@ module.exports = {
   SESS_LIFETIME,
   SENDGRID_API_KEY,
   CREATE_USER_SECRET,
+  nodeMailerEmail,
+  nodeMailerPassword
 };
