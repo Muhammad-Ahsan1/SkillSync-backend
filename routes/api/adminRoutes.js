@@ -4,6 +4,25 @@ const asyncMiddleware = require("../../middlewares/async");
 const User = require("../../models/User");
 const Seller = require("../../models/Seller");
 const Customer = require("../../models/Customer");
+const Admin = require("../../models/admin");
+
+router.post('/login', asyncMiddleware(async (req, res) => {
+  const {
+    email,
+    password
+  } = req.body;
+
+  const admin = await Admin.findOne({
+      email,
+      password
+  });
+
+  if (admin) {
+    res.status(200).send(admin);
+  } else {
+    res.status(401).send('Invalid email or password');
+  }
+}))
 
 router.get(
   "/getAllUsers",
@@ -32,7 +51,9 @@ router.get(
 router.get(
   "/deleteSeller/:id",
   asyncMiddleware(async (req, res) => {
-    const { id } = req.params;
+    const {
+      id
+    } = req.params;
     await Seller.findByIdAndDelete(id);
     res.send('Seller Deleted');
   })
@@ -40,7 +61,9 @@ router.get(
 router.get(
   "/deleteCustomer/:id",
   asyncMiddleware(async (req, res) => {
-    const { id } = req.params;
+    const {
+      id
+    } = req.params;
     await Customer.findByIdAndDelete(id);
     res.send('Customer Deleted');
   })
@@ -48,7 +71,9 @@ router.get(
 router.get(
   "/deleteUser/:id",
   asyncMiddleware(async (req, res) => {
-    const { id } = req.params;
+    const {
+      id
+    } = req.params;
     await User.findByIdAndDelete(id);
     res.send('User Deleted');
   })
@@ -58,8 +83,10 @@ router.get(
 router.post(
   "/editUser/:id",
   asyncMiddleware(async (req, res) => {
-    const { id } = req.params;
-    await User.findByIdAndUpdate(id,req.body);
+    const {
+      id
+    } = req.params;
+    await User.findByIdAndUpdate(id, req.body);
     res.send('User Edited');
   })
 );
@@ -67,8 +94,10 @@ router.post(
 router.post(
   "/editSeller/:id",
   asyncMiddleware(async (req, res) => {
-    const { id } = req.params;
-    await Seller.findByIdAndUpdate(id,req.body);
+    const {
+      id
+    } = req.params;
+    await Seller.findByIdAndUpdate(id, req.body);
     res.send('Seller Edited');
   })
 );
@@ -76,8 +105,10 @@ router.post(
 router.post(
   "/editCustomer/:id",
   asyncMiddleware(async (req, res) => {
-    const { id } = req.params;
-    await Customer.findByIdAndUpdate(id,req.body);
+    const {
+      id
+    } = req.params;
+    await Customer.findByIdAndUpdate(id, req.body);
     res.send('Customer Edited');
   })
 );
