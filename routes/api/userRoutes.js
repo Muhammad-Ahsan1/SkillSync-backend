@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const bcrypt = require("bcrypt");
+const bcrypt = require('bcryptjs');
 const Joi = require("joi");
 const { CREATE_USER_SECRET } = require("../../config");
 

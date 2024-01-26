@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const bcrypt = require("bcrypt");
+const bcrypt = require('bcryptjs');
 
 const asyncMiddleware = require("../../../middlewares/async");
 const imagesUploader = require("../../../helpers/imagesUploader");
