@@ -8,7 +8,7 @@ const validateId = require("../../../middlewares/validateId");
 const isEmpty = require("../../../helpers/isEmpty");
 
 const Job = require("../../../models/Job");
-const Review = require("../../../models/Review");
+// const Review = require("../../../models/Review");
 const Notification = require("../../../models/Notification");
 const Customer = require("../../../models/Customer");
 const Seller = require("../../../models/Seller");
@@ -86,8 +86,8 @@ router.get(
   validateId,
   asyncMiddleware(async (req, res) => {
     const userID = req.params.id;
-    const response = await Review.find({ userID: userID });
-    res.json(response);
+    // const response = await Review.find({ userID: userID });
+    res.json({msg:'hello'});
   })
 );
 
