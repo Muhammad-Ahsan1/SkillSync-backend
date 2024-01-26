@@ -22,7 +22,7 @@ app.use(cors(
   }
 ));
 app.use(compression()); // gzip compress responses
-require("./startup/logging")(); // logging to files
+// require("./startup/logging")(); // logging to files
 require("./startup/db")(); // database connection
 require("./startup/session")(app); // Initialized session for authentication
 require("./startup/securityHeaders")(app); // Setting security headers with helmet module

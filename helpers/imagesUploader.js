@@ -1,7 +1,7 @@
 const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
-const logger = require("../helpers/logger");
+// const logger = require("../helpers/logger");
 
 // Check File Type
 function checkFileType(file, cb) {
@@ -23,11 +23,11 @@ const validate = () => ({ error: undefined });
 
 function upload(applyValidation = validate, folder = "") {
   const filePath = `./public/media/images${folder}`;
-  if (!fs.existsSync(filePath)) {
-    fs.mkdir(filePath, { recursive: true }, (err) => {
-      if (err) logger.error(err);
-    });
-  }
+  // if (!fs.existsSync(filePath)) {
+  //   fs.mkdir(filePath, { recursive: true }, (err) => {
+  //     if (err) logger.error(err);
+  //   });
+  // }
 
   // Set The Storage Engine
   const storage = multer.diskStorage({

@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const logger = require("../helpers/logger");
+// const logger = require("../helpers/logger");
 const { MONGO_URI } = require("../config");
 
 module.exports = function () {
@@ -14,5 +14,7 @@ module.exports = function () {
     .then((conn) =>
       console.log(`> 👍 Connected to MongoDB... ${conn.connection.host}`)
     )
-    .catch((err) => logger.error(`Could not connect to MongoDB!!! \n ${err}`));
+    .catch((err) => {
+      // logger.error(`Could not connect to MongoDB!!! \n ${err}`)
+    });
 };
