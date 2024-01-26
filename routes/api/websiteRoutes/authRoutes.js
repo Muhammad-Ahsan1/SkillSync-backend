@@ -14,7 +14,6 @@ const Customer = require("../../../models/Customer");
 const Seller = require("../../../models/Seller");
 const { validateCustomer } = require("../../../models/Customer");
 const { validateSeller } = require("../../../models/Seller");
-const { registrationTemplate } = require("../../../service/templates/nodeMailerTransporter");
 
 const customerImageUrl = "/media/images/customer/";
 const sellerImageUrl = "/media/images/seller/";
@@ -165,7 +164,6 @@ router.post(
 
         const notification = new Notification(notificationPayload);
         await notification.save();
-        await registrationTemplate(req.body)
         res.json({ message: "Customer Added Successfully!" });
       });
     } else {
@@ -217,7 +215,6 @@ router.post(
 
         const notification = new Notification(notificationPayload);
         await notification.save();
-        await registrationTemplate(req.body)
         res.json({ message: "Seller Added Successfully!" });
       });
     }
